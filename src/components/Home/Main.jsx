@@ -8,6 +8,7 @@ import { FaGlobeAsia } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { GrNext } from "react-icons/gr";
+import Advertise from './Advertise';
 function Main() {
   const employees = useRef(null)
   const equip = useRef(null)
@@ -159,7 +160,7 @@ function Main() {
         </motion.div>
       </section>
 
-      <section className={styles.advertise}>
+      {/* <section className={styles.advertise}>
 
         <div className={styles.img1}>
           <FaGlobeAsia />
@@ -178,7 +179,8 @@ function Main() {
           <p>Contact by</p>
           <p> +91 9980066665</p>
         </div>
-      </section>
+      </section> */}
+      <Advertise />
     </div>
   )
 }
