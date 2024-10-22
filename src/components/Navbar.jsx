@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./Navbar.scss";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,5 +37,6 @@ export const Navbar = () => {
       </ul>
     </nav>
     <Outlet />
+    <Footer />
   </>);
 };

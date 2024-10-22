@@ -15,16 +15,16 @@ import { Outlet } from 'react-router-dom';
 function Image({img}){
 return(<div className={img + ' gap' }>
     <div className='left'>
-    <h2>Welcome to  
+    <p>Welcome to</p>
+    <h2>
       <span className='name'> Sri Velu Enterprises</span></h2>
-    <p>Your partner for the best Fasteners</p>
     </div>
 </div>)
 }
 
 function IndividualIntervalsExample() {
   return (<div>
-    <Carousel fade>
+    <Carousel fade pause='false'>
       <Carousel.Item interval={700}>
         <Image img="bo1" title="Sri Velu Enterprises"
         desc=" is a leading manufacturer of high-quality nuts, bolts, and fasteners, serving industries across construction, automotive, machinery, and more. With precision engineering and durable materials, we provide a wide range of standard and custom solutions designed to meet the toughest performance and safety standards. Our state-of-the-art manufacturing facility ensures reliable production, while our experienced team ensures timely delivery and customer satisfaction. Whether you need bulk orders or specialized designs, we are your trusted partner for fastening solutions that last."
