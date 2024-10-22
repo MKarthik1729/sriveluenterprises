@@ -1,0 +1,93 @@
+$dark:#1d2228;
+$light:#e1e2e2;
+$hover:#F37E00;
+
+.main{
+    padding: 10px 10%;
+    background-color: $light;
+}
+
+.products{
+    display: flex;
+    
+    gap: 2vw;
+    height: 60vh;
+    div{
+        background-color: $light;
+        img{
+            height: 80%;
+        }
+    }
+}
+
+.equipment{
+    display: flex;
+    gap: 2vw;
+    height: 60vh;
+    div{
+        background-color: $light;
+        img{
+            height: 70%;
+        }
+    }
+}
+
+.first{
+    
+    div{
+        padding: 50px 2vw;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    height: 60vh;
+    p{
+        font-size:medium;
+        width:  70%;
+    }
+    }
+}
+
+.imageholder{
+    width: 100%;
+    background-image: url('./employees.jpeg');
+    // background-repeat: initial;
+    background-size: cover;
+    overflow: hidden;
+    // height: 100%;
+    // width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: end;
+    
+    position: relative;
+    border-radius: 10px;
+img{
+    // width: 50px;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    width: 40vh;
+    height: 30vh;
+    // image-resolution:;
+    object-fit: cover;
+    border-radius: 10px 0 0  10px;
+    // height: 40%;
+    
+    // display: none;
+}
+}
+
+.facts{
+    all: revert;
+}
+
+.icon{
+    // display:none;
+    // all: revert;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    color: #F37E00;
+    border: 1px solid $hover;
+    border-radius: 50%;
+}

@@ -1,0 +1,142 @@
+// $dark:#1d2228;
+// $light:#e1e2e2;
+// $hover:#F37E00;
+$light:#1d2228;
+$dark:#ffffff;
+$hover:#F37E00;
+
+.ative{
+
+    color: $hover;
+}
+.inative{
+
+    color: $light;
+}
+
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $dark;
+    color: $light;
+    position: sticky;
+    top: 0;
+    padding: 0 5vw;
+    font-weight: 500;
+    z-index: 1;
+    // text-overflow:;
+    object-fit: contain;
+}
+
+.nav .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: $light;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+   list-style: none; 
+}
+
+.nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-size: xx-large;
+    color: $light;
+}
+
+.nav ul li a:not(.active):hover {
+    // background-color:#172554 ;
+    color: $hover;
+}
+.nav ul li .active {
+    // background-color:#172554 ;
+    color: $hover;
+}
+
+.nav .menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    // width: 2.25rem;
+    width: 2.5rem;
+
+    height: 2rem;
+    padding: 10px;
+}
+
+.nav .menu span {
+    height: 0.2rem;
+    width: 100%;
+    background-color: $light;
+    border-radius: 0.2rem;
+    // padding: 1rem;
+    // margin: 10px;
+}
+
+.logo{
+    // display: block;
+    margin: 0;
+
+}
+
+@media (min-width:730px) {
+    .logo{
+        width: 4vw;
+    }
+    .nav{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 730px) {
+    .logo{
+        width: 50px;
+    }
+    .nav .menu {
+        display: flex;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    // a{
+    //     text-decoration: none;
+    //     color: #1d2228;
+    // }
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    .nav ul.open {
+        display: flex;
+    }
+
+    .nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul li a {
+        margin: 0.2rem 0.5rem;
+        // font-size: xx-large;
+    }
+}

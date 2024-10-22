@@ -1,0 +1,20 @@
+body,* {
+  font-family: 'Lato', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #1d2228;
+  line-height: 1.4;
+  font-weight: 400;
+  font-size: 20px;
+
+  font-synthesis: none;
+  /* text-rendering: optimizeLegibility; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, #root{
+  margin: 0;
+  padding: 0;
+  color: #1d2228;
+}
