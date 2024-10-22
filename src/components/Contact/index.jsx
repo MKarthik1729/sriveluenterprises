@@ -1,8 +1,11 @@
 import React from 'react'
+import UnderConstructionPage from '../UnderonstructionPage'
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <UnderConstructionPage />
+    </div>
   )
 }
 
