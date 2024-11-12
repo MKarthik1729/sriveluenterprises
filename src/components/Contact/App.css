@@ -1,0 +1,260 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.b1{
+  background-image: url('https://www.sriveluenterprises.com/about-bg.jpg');
+}
+
+.b2{
+  background-image: url('https://www.sriveluenterprises.com/bg.jpg');
+}
+
+.b3{
+  background-image: url('https://www.sriveluenterprises.com/corevalue-bg.jpg');
+}
+
+
+
+.backgroundContainer {
+  background-size: cover;
+  background-position: center; /* Optional: Center the background image */
+  background-repeat: no-repeat;
+  width: 100vw; /* 100% of the viewport width */
+  height: 500px; 
+  /* Additional styles or adjustments as needed */
+}
+
+.common{
+  background-color: aliceblue;
+  padding: 20px;
+
+  /* margin: 2vh 25vw; */
+  /* height: 100vh; */
+}
+
+.common .srivelu{
+  font-weight: 700;
+  color: green;
+}
+
+/* App.css */
+.con {
+
+  color: aliceblue;
+}
+
+/* .column {
+
+
+} */
+
+/* Common styles for both laptop and mobile */
+/* body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+} */
+.welcome .srivelu{
+  font-weight: 800;
+  /* background-color: aliceblue; */
+   color:rgb(0,67,3)
+   /* color: aliceblue; */
+}
+.center{
+  text-align: center;
+}
+
+.flex div img {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.flex div table tr td,.flex div table tr tH {
+color: #291c02;
+border:1px solid black;
+padding: 1vw;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .contact{
+    padding: 4vh 0;
+    display:flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+  .equal{
+    flex: 1;
+  }
+  .control{
+    width: 100%;
+  }
+  .control img{
+    height: 400px;
+  }
+  
+  .flex{
+    display: flex;
+    gap:2%;
+    padding: 1vw;
+  }
+  /* .flex div{
+    width: 30%;
+    content: inherit;
+    border:1px solid black;
+    overflow:auto;
+
+  } */
+
+
+  .quality{
+    display: flex;
+    gap: 3%;
+  }
+  .con {
+    display: flex;
+  }
+  .column{
+    flex:1;
+    padding: 20px;
+  }
+  .about-icons{
+    font-size: 2vw;
+  }
+  .welcome .srivelu{
+     font-size: 3vw;
+  }
+  .welcome h2{
+    font-size: 2vw;
+    color: #431515;
+  }
+  .mission{
+    padding: 10vh 10vw;
+  }
+  .common{
+    width: 40vw;
+  }
+  .welcome p{
+    background-color:#fff;
+    font-size: 1.5vw;
+    color: #431515;
+  }
+
+
+  .pad{
+    padding:50px;
+  }
+}
+.mission{
+
+  font-size: larger;
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome p{
+    background-color:#fff;
+    font-size: 18px;
+
+  }
+
+  .control{
+    width: 80%;
+    text-align: center;
+    margin: 0 10%;
+  }
+
+}
+
+.div-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.div-center div li{
+  font-size: x-large;
+}
+
+
+.centered-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.icon_back{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px; 
+  height: 80px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 50%; /* Make it a circle */
+  color: red; /* Border color (red in this case) */
+}
+
+.icons{
+  background-color: beige;
+  color: red;
+}
+
+.icon-head{
+  font-size: 100px;
+}
+
+.middle{
+  text-align: center;
+  font-size: 40px;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* .quality{
+
+  padding: 0 6%;
+} */
+.padding{
+  padding: 0 10%;
+}
+
+
