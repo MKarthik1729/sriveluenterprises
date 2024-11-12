@@ -8,7 +8,7 @@ import Images from './components/Landing/Images'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from './components/About'
 import Contact from './components/Contact'
-import Gallery from './components/Gallery'
+import Gallery from './components/Galler'
 import Bussiness from './components/Bussiness'
 // rgb(243, 126, 0) #F37E00 orange
 // #1d2228 black

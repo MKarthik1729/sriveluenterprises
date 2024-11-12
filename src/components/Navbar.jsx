@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 import "./Navbar.scss";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "./Footer";
@@ -25,7 +26,17 @@ export const Navbar = () => {
           <NavLink to="/about">About Us</NavLink>
         </li>
         <li>
+          
+          <Dropdown as={ButtonGroup} align={{ lg: 'end' }}
+          >
           <NavLink to="/bussiness">Bussiness Vericals</NavLink>
+      <Dropdown.Toggle id="drop"  />
+        <Dropdown.Menu >
+          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </Dropdown.Menu>
+    </Dropdown>
         </li>
         <li>
           <NavLink to="/gallery">Gallery</NavLink>

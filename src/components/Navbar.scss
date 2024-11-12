@@ -55,7 +55,11 @@ $hover:#F37E00;
     font-size: xx-large;
     color: $light;
 }
-
+#drop{
+    background-color: $dark;
+    border-color: $dark;
+    color: $light;
+}
 .nav ul li a:not(.active):hover {
     // background-color:#172554 ;
     color: $hover;
