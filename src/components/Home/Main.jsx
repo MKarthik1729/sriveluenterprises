@@ -128,7 +128,7 @@ function Main() {
             <Card.Img variant="top" src="https://www.sriveluenterprises.com/machines/Mi08j-11.jpeg" />
             <Card.Body>
               <Card.Title>Tsugami Mi08j-11</Card.Title>
-              <Button variant="info">Equipment </Button>
+              <Button as={Link} to="/bussiness/equipment">See More </Button>
             </Card.Body>
           </Card>
           <Card as={motion.div} variants={item} style={{ width: '18rem' }}>
@@ -139,7 +139,7 @@ function Main() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text> */}
-              <Button variant="info">Equipment </Button>
+              <Button as={Link} to="/bussiness/equipment">See More </Button>
             </Card.Body>
           </Card>
           <Card as={motion.div} variants={item} style={{ width: '18rem' }}>
@@ -150,13 +150,17 @@ function Main() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text> */}
-              <Button variant="info">Equipment </Button>
+              <Button as={Link} to="/bussiness/equipment">See More </Button>
             </Card.Body>
           </Card>
-          <Card as={motion.div} variants={item} style={{ width: '10rem' }} className={styles.ic1}>
+          <Card 
+          
+          as={motion.div} variants={item} style={{ width: '10rem' }} className={styles.ic1}>
+            <Link to="/bussiness/equipment">
                 <GrNext />
-                <p>See More</p>
-          </Card>
+                <p  >See More</p>
+            </Link>
+          </Card> 
         </motion.div>
       </section>
 

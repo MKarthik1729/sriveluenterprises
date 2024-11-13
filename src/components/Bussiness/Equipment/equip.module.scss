@@ -1,0 +1,19 @@
+$dark:rgb(29, 34, 40);
+$light:rgb(225, 226, 226);
+$hover:#F37E00;
+$ldark:rgba(5, 8, 48, 0.8);
+
+.equip{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color:$light;
+    width: 100%;
+    padding: 5vh 10vw;
+    // row-gap: 5;
+    div{
+        margin: 10px;
+        img{
+            height:70%;
+        }
+    }
+}
