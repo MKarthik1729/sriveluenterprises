@@ -12,7 +12,7 @@ function Material() {
     <motion.div style={{
       padding:" 20px 5%"
     }}> 
-            <Gallery images={data}  rowHeight={450} margin={10}/>
+            <Gallery images={data}  rowHeight={400} margin={20}/>
     </motion.div>
   )
 }

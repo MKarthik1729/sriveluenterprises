@@ -62,10 +62,11 @@ $hover:#F37E00;
 }
 .nav ul li a:not(.active):hover {
     // background-color:#172554 ;
+    background-color:$dark ;
     color: $hover;
 }
 .nav ul li .active {
-    // background-color:#172554 ;
+    background-color:$dark ;
     color: $hover;
 }
 
