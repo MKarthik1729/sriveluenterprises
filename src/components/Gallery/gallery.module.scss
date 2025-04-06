@@ -1,0 +1,152 @@
+@import '../styles/variables.scss';
+
+.galleryContainer {
+  padding-top: calc(#{$navbar-height} + #{$spacing-4xl});
+  min-height: 100vh;
+  background: $dark;
+  color: $light;
+  position: relative;
+  z-index: $z-index-content;
+}
+
+.galleryHeader {
+  padding: $spacing-4xl;
+  text-align: center;
+  background-image: linear-gradient(135deg, rgba($dark, 0.95) 0%, rgba($dark, 0.9) 100%);
+
+  h1 {
+    color: $hover;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xl;
+    font-weight: bold;
+
+    @include responsive($breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: $light;
+
+    @include responsive($breakpoint-md) {
+      font-size: 1.1rem;
+      padding: 0 $spacing-lg;
+    }
+  }
+}
+
+.galleryGrid {
+  padding: $spacing-4xl;
+  background-color: $light;
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-xl;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .imageCard {
+      position: relative;
+      border-radius: $border-radius-lg;
+      overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($dark, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        .zoomIcon {
+          color: white;
+          font-size: 2rem;
+          transform: scale(0.5);
+          transition: transform 0.3s ease;
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .overlay {
+          opacity: 1;
+          background: rgba($dark, 0.5);
+
+          .zoomIcon {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive($breakpoint-md) {
+    padding: $spacing-2xl $spacing-lg;
+
+    .gridContainer {
+      gap: $spacing-md;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($dark, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-index-modal;
+  padding: $spacing-2xl;
+
+  .modalContent {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .closeButton {
+      position: absolute;
+      top: -$spacing-2xl;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+} 

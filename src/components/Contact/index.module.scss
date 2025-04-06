@@ -1,0 +1,190 @@
+@import '../styles/variables.scss';
+@import '../styles/layout.module.scss';
+
+.contactContainer {
+  @extend .pageContainer;
+  padding-top: calc($navbar-height + $spacing-2xl);
+  min-height: 100vh;
+  background-color: $light;
+}
+
+.contactHeader {
+  @extend .pageHeader;
+  text-align: center;
+  padding: $spacing-4xl $spacing-2xl;
+  background: linear-gradient(135deg, rgba($dark, 0.95) 0%, rgba($dark, 0.9) 100%);
+  color: $light;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-lg;
+    color: $hover;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.contactContent {
+  padding: $spacing-4xl $spacing-2xl;
+  background-color: $light;
+
+  @include responsive($breakpoint-md) {
+    padding: $spacing-2xl $spacing-lg;
+  }
+
+  .contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-4xl;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include responsive($breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+    }
+  }
+}
+
+.contactInfo {
+  .infoCard {
+    background: white;
+    padding: $spacing-xl;
+    border-radius: $border-radius-lg;
+    margin-bottom: $spacing-xl;
+    box-shadow: 0 4px 6px rgba($dark, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba($dark, 0.2);
+    }
+
+    h3 {
+      color: $hover;
+      font-size: 1.5rem;
+      margin-bottom: $spacing-md;
+    }
+
+    .directorImage {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: $spacing-lg auto;
+      display: block;
+    }
+
+    p {
+      color: $dark;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-sm;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: $hover;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken($hover, 10%);
+        }
+      }
+    }
+  }
+}
+
+.contactForm {
+  background: white;
+  padding: $spacing-2xl;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 4px 6px rgba($dark, 0.1);
+
+  h2 {
+    color: $hover;
+    font-size: 2rem;
+    margin-bottom: $spacing-xl;
+  }
+
+  .formGroup {
+    margin-bottom: $spacing-lg;
+
+    label {
+      display: block;
+      color: $dark;
+      font-size: 1.1rem;
+      margin-bottom: $spacing-sm;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: $spacing-md;
+      border: 1px solid rgba($dark, 0.1);
+      border-radius: $border-radius-md;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $hover;
+        box-shadow: 0 0 0 2px rgba($hover, 0.1);
+      }
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+  }
+
+  button {
+    background-color: $hover;
+    color: white;
+    border: none;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius-md;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($hover, 10%);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.map {
+  margin-top: $spacing-4xl;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba($dark, 0.1);
+
+  iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+  }
+
+  @include responsive($breakpoint-md) {
+    margin-top: $spacing-2xl;
+    
+    iframe {
+      height: 300px;
+    }
+  }
+} 

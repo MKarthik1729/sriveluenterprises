@@ -1,61 +1,290 @@
+@import '../styles/variables.scss';
+@import '../styles/layout.module.scss';
+
 $dark:rgb(29, 34, 40);
 $light:rgb(225, 226, 226);
 $hover:#F37E00;
 $ldark:rgba(5, 8, 48, 0.8);
 
-.about{
-    padding: 0;
-    margin: 0;
-    .info{
-        padding: 5vh 10% ;
-        background-image: url('../nuts.jpg');
-        box-shadow: inset 0  0 0 1000px $ldark;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        color: $light;
-        font-size: larger;
-        h2{
-            color: $hover;
-            width: 40vw;
-            text-align: center;
-            font-size:4vw;
-            // margin: 0;
-        }
-        p{
-            width: 40vw;
-        }
-        ul{
-            width: 40vw;
-            margin: 0;
-            list-style:circle;
-        }
-    }
+.aboutContainer {
+  @extend .pageContainer;
+  padding-top: $navbar-height;
+  min-height: 100vh;
+  background: $dark;
+  color: $light;
+  position: relative;
+  z-index: 1;
 }
 
-.objectives{
-    padding: 5vh 10vw;
-    background-color: $light;
-    color: $hover;
-    display: grid;
-    row-gap: 5vh;
-    column-gap: 3vw;
-    // grid-template-rows: 2;
-    text-align: center;
-    grid-template-columns: auto auto auto;
-    div{
-    svg{
-        width: 180px;
-        height: 180px;
-        background-color: $dark;
-        color: $hover;
-        padding: 30px;
-        border-radius: 50%;
-    }
-    p{
-        font-size:  x-large;
-        padding-top: 10px;
-        font-weight: 500;
-    }
+.aboutHeader {
+  @extend .pageHeader;
 }
+
+.aboutContent {
+  @extend .pageContent;
+  padding-top: $spacing-2xl;
+
+  h1 {
+    font-size: $font-size-4xl;
+    color: $primary;
+    margin-bottom: $spacing-2xl;
+    text-align: left;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    line-height: 1.8;
+    margin-bottom: $spacing-xl;
+    color: $text-light;
+    max-width: 900px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: $spacing-2xl 0;
+
+    li {
+      font-size: $font-size-lg;
+      color: $text-light;
+      margin-bottom: $spacing-lg;
+      padding-left: $spacing-xl;
+      position: relative;
+      line-height: 1.6;
+
+      &::before {
+        content: '•';
+        color: $primary;
+        position: absolute;
+        left: 0;
+        font-size: $font-size-xl;
+      }
+    }
+  }
+
+  .objectives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-xl;
+    margin-top: $spacing-2xl;
+
+    .objectiveCard {
+      background: white;
+      padding: $spacing-xl;
+      border-radius: $border-radius-lg;
+      box-shadow: 0 4px 6px rgba($dark, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba($dark, 0.2);
+      }
+
+      .icon {
+        font-size: 2rem;
+        color: $hover;
+        margin-bottom: $spacing-md;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        color: $dark;
+        margin-bottom: $spacing-md;
+        font-weight: 600;
+      }
+
+      p {
+        color: rgba($dark, 0.8);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  @include responsive($breakpoint-md) {
+    .objectives {
+      gap: $spacing-lg;
+      margin-top: $spacing-xl;
+
+      .objectiveCard {
+        padding: $spacing-lg;
+
+        .icon {
+          font-size: 1.75rem;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.valuesSection {
+  margin-top: $spacing-4xl;
+  padding: $spacing-2xl 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: $border-radius-lg;
+
+  h2 {
+    font-size: $font-size-3xl;
+    color: $primary;
+    margin-bottom: $spacing-2xl;
+    text-align: center;
+  }
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  padding: 0 $spacing-xl;
+
+  .valueCard {
+    background: rgba(255, 255, 255, 0.1);
+    padding: $spacing-xl;
+    border-radius: $border-radius-lg;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    h3 {
+      font-size: $font-size-xl;
+      color: $primary;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: $font-size-base;
+      color: $text-light;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+}
+
+@include responsive($breakpoint-md) {
+  .aboutContent {
+    padding-top: $spacing-xl;
+
+    h1 {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-xl;
+    }
+
+    p {
+      font-size: $font-size-base;
+    }
+
+    ul li {
+      font-size: $font-size-base;
+      padding-left: $spacing-lg;
+    }
+  }
+
+  .valuesSection {
+    margin-top: $spacing-2xl;
+    padding: $spacing-xl 0;
+
+    h2 {
+      font-size: $font-size-2xl;
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  .valuesGrid {
+    gap: $spacing-lg;
+    padding: 0 $spacing-md;
+
+    .valueCard {
+      padding: $spacing-lg;
+
+      h3 {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}
+
+.info {
+  padding: calc(#{$spacing-4xl} + #{$navbar-height}) $spacing-4xl $spacing-4xl;
+  background-image: url('../nuts.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: $light;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($dark, 0.85);
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      color: $hover;
+      font-size: 2.5rem;
+      margin-bottom: $spacing-2xl;
+      text-align: center;
+      font-weight: bold;
+
+      @include responsive($breakpoint-md) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: $spacing-xl;
+      color: $light;
+
+      @include responsive($breakpoint-md) {
+        font-size: 1.1rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: $spacing-2xl 0;
+
+      li {
+        font-size: 1.1rem;
+        color: $light;
+        margin-bottom: $spacing-lg;
+        padding-left: $spacing-xl;
+        position: relative;
+        line-height: 1.6;
+
+        &::before {
+          content: '•';
+          color: $hover;
+          position: absolute;
+          left: 0;
+          font-size: 1.5rem;
+        }
+
+        @include responsive($breakpoint-md) {
+          font-size: 1rem;
+          padding-left: $spacing-lg;
+        }
+      }
+    }
+  }
 }

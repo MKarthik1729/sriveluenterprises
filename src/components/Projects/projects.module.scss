@@ -1,0 +1,95 @@
+@import '../styles/variables.scss';
+@import '../styles/layout.module.scss';
+
+.projectsContainer {
+  @extend .pageContainer;
+}
+
+.projectsContent {
+  @extend .pageContent;
+}
+
+.projectsTitle {
+  @extend .pageTitle;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-xl;
+  margin-top: $spacing-2xl;
+
+  @include responsive($breakpoint-md) {
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+  }
+}
+
+.projectCard {
+  background: white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .cardContent {
+    padding: $spacing-xl;
+
+    h3 {
+      font-size: $font-size-xl;
+      color: $primary;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: $font-size-base;
+      color: $text-dark;
+      line-height: 1.6;
+      margin-bottom: $spacing-lg;
+    }
+
+    .btn {
+      background-color: $primary;
+      color: white;
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius-md;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+
+  @include responsive($breakpoint-md) {
+    img {
+      height: 200px;
+    }
+
+    .cardContent {
+      padding: $spacing-lg;
+
+      h3 {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+} 

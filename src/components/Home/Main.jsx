@@ -55,112 +55,179 @@ function Main() {
 
   return (
     <div >
-      <br />
+
       <section className={styles.first} ref={employees}>
-        <motion.div
-          variants={container}
-          initial={isempView ? "hidden" : ""}
-          animate={isempView ? "visible" : "hidden"}
-        >
+        <div className={styles.contentWrapper}>
+          <div className={styles.textContent}>
+            <motion.h1
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className={styles.companyTitle}
+            >
+              <span className={styles.sri}>Sri</span>{" "}
+              <span className={styles.velu}>Velu</span>{" "}
+              <span className={styles.enterprises}>Enterprises</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              A leading manufacturer of high-quality nuts, bolts, and fasteners, serving industries across construction, automotive, machinery, and more. With precision engineering and durable materials, we provide a wide range of standard and custom solutions designed to meet the toughest performance and safety standards. Our state-of-the-art manufacturing facility ensures reliable production, while our experienced team ensures timely delivery and customer satisfaction. Whether you need bulk orders or specialized designs, we are your trusted partner for fastening solutions that last.
+            </motion.p>
+          </div>
+          
           <motion.div
-            variants={container1}
-            initial={isempView ? "hidden" : ""}
-            animate={isempView ? "visible" : "hidden"}
-            className={styles.imageholder}>
-            {/* <motion.img variants={item} src='./velu.jpeg'/> */}
+            className={styles.imageholder}
+            initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ 
+              duration: 1,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+          >
+            <img 
+              src="/employees.jpeg" 
+              alt="Sri Velu Enterprises Team" 
+              className={styles.teamImage}
+            />
           </motion.div>
-          <motion.p
-            variants={item}
-          >A leading manufacturer of high-quality nuts, bolts, and fasteners, serving industries across construction, automotive, machinery, and more. With precision engineering and durable materials, we provide a wide range of standard and custom solutions designed to meet the toughest performance and safety standards. Our state-of-the-art manufacturing facility ensures reliable production, while our experienced team ensures timely delivery and customer satisfaction. Whether you need bulk orders or specialized designs, we are your trusted partner for fastening solutions that last.</motion.p>
-        </motion.div>
+        </div>
       </section>
       {/* <IconsPart styles={styles} /> */}
 
       <section ref={product} className={styles.productsection}>
-        <h2>Products</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Our Products
+        </motion.h2>
         <hr />
         <motion.div
           variants={container}
           initial={isproView ? "hidden" : ""}
           animate={isproView ? "visible" : "hidden"}
-          className={styles.products}>
-
-
-          <Card as={motion.div} variants={item} style={{ width: '18rem' }} >
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/products/material8.jpeg" />
+          className={styles.products}
+        >
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="/products/material15.jpeg"
+              alt="Precision Machined Components"
+            />
             <Card.Body>
-              {/* <Card.Title>Card Title</Card.Title> */}
-              {/* <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text> */}
-              <Button as={Link} to="/bussiness">See More </Button>
+              <Card.Title>Precision Components</Card.Title>
+              <Card.Text>High-quality machined parts with precise specifications</Card.Text>
+              <Button as={Link} to="/bussiness" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
 
-          <Card as={motion.div} style={{ width: '18rem' }} variants={item}>
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/products/material11.jpeg" />
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="/products/material27.jpeg"
+              alt="Industrial Fasteners"
+            />
             <Card.Body>
-              <Button as={Link} to="/bussiness">See More </Button>
+              <Card.Title>Industrial Fasteners</Card.Title>
+              <Card.Text>Durable fastening solutions for various applications</Card.Text>
+              <Button as={Link} to="/bussiness" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
-          <Card as={motion.div} style={{ width: '18rem' }} variants={item}>
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/products/material23.jpeg" />
+
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="/products/material30.jpeg"
+              alt="Custom Manufacturing"
+            />
             <Card.Body>
-              <Button as={Link} to="/bussiness">See More </Button>
+              <Card.Title>Custom Manufacturing</Card.Title>
+              <Card.Text>Tailored solutions for specific industry needs</Card.Text>
+              <Button as={Link} to="/bussiness" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
-          <Card as={motion.div} variants={item} style={{ width: '10rem' }} className={styles.ic1}>
-                <GrNext />
-                <p>See More</p>
+
+          <Card as={motion.div} variants={item} className={`${styles.productCard} ${styles.seeMoreCard}`}>
+            <Link to="/bussiness" className={styles.seeMoreLink}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={styles.seeMoreContent}
+              >
+                <GrNext size={30} />
+                <p>Explore All Products</p>
+              </motion.div>
+            </Link>
           </Card>
         </motion.div>
       </section>
 
       <section ref={equip} className={styles.equipsection}>
-        <h2>Equipment</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Our Equipment
+        </motion.h2>
         <hr />
-        <motion.div className={styles.equipment}
+        <motion.div 
+          className={styles.equipment}
           variants={container}
           initial={isequipView ? "hidden" : ""}
-          animate={isequipView ? "visible" : "hidden"}>
-          <Card as={motion.div} variants={item} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/machines/Mi08j-11.jpeg" />
+          animate={isequipView ? "visible" : "hidden"}
+        >
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="https://www.sriveluenterprises.com/machines/Mi08j-11.jpeg"
+              alt="Tsugami Mi08j-11"
+            />
             <Card.Body>
               <Card.Title>Tsugami Mi08j-11</Card.Title>
-              <Button as={Link} to="/bussiness/equipment">See More </Button>
+              <Card.Text>High-precision CNC machine for complex parts manufacturing</Card.Text>
+              <Button as={Link} to="/bussiness/equipment" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
-          <Card as={motion.div} variants={item} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/machines/hwacheon.jpeg" />
+
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="https://www.sriveluenterprises.com/machines/hwacheon.jpeg"
+              alt="Hwacheon Cutex - 160a i"
+            />
             <Card.Body>
               <Card.Title>Hwacheon Cutex - 160a i</Card.Title>
-              {/* <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text> */}
-              <Button as={Link} to="/bussiness/equipment">See More </Button>
+              <Card.Text>Advanced turning center for superior surface finish</Card.Text>
+              <Button as={Link} to="/bussiness/equipment" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
-          <Card as={motion.div} variants={item} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://www.sriveluenterprises.com/machines/LX20TL3.jpeg" />
+
+          <Card as={motion.div} variants={item} className={styles.productCard}>
+            <img
+              src="https://www.sriveluenterprises.com/machines/LX20TL3.jpeg"
+              alt="LMW LX20T L3"
+            />
             <Card.Body>
               <Card.Title>LMW LX20T L3</Card.Title>
-              {/* <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text> */}
-              <Button as={Link} to="/bussiness/equipment">See More </Button>
+              <Card.Text>Versatile lathe for precision turning operations</Card.Text>
+              <Button as={Link} to="/bussiness/equipment" variant="primary">View Details</Button>
             </Card.Body>
           </Card>
-          <Card 
-          
-          as={motion.div} variants={item} style={{ width: '10rem' }} className={styles.ic1}>
-            <Link to="/bussiness/equipment">
-                <GrNext />
-                <p  >See More</p>
+
+          <Card as={motion.div} variants={item} className={`${styles.productCard} ${styles.seeMoreCard}`}>
+            <Link to="/bussiness/equipment" className={styles.seeMoreLink}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={styles.seeMoreContent}
+              >
+                <GrNext size={30} />
+                <p>Explore All Equipment</p>
+              </motion.div>
             </Link>
-          </Card> 
+          </Card>
         </motion.div>
       </section>
 

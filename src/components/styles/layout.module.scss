@@ -1,0 +1,92 @@
+@import './variables.scss';
+
+// Global page container style
+.pageContainer {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  background: $dark;
+  color: $light;
+}
+
+// Global header style
+.pageHeader {
+  padding: $spacing-4xl $spacing-4xl $spacing-2xl;
+  background-image: linear-gradient(135deg, rgba($dark, 0.95) 0%, rgba($dark, 0.9) 100%);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  h1 {
+    color: $hover;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xl;
+    font-weight: bold;
+
+    @include responsive($breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: $light;
+
+    @include responsive($breakpoint-md) {
+      font-size: 1.1rem;
+      padding: 0 $spacing-lg;
+    }
+  }
+}
+
+// Global content section style
+.pageContent {
+  padding: $spacing-4xl;
+  background-color: $light;
+  position: relative;
+  z-index: 2;
+
+  @include responsive($breakpoint-md) {
+    padding: $spacing-2xl $spacing-lg;
+  }
+}
+
+// Global grid container style
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-2xl;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @include responsive($breakpoint-md) {
+    gap: $spacing-xl;
+  }
+}
+
+.pageTitle {
+  font-size: $font-size-4xl;
+  color: $text-dark;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: $primary;
+  }
+
+  @include responsive($breakpoint-md) {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-lg;
+  }
+} 
