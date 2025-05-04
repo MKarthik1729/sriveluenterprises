@@ -58,19 +58,19 @@ function Main() {
       <br />
       <section className={styles.first} ref={employees}>
         <motion.div
-          variants={container}
-          initial={isempView ? "hidden" : ""}
-          animate={isempView ? "visible" : "hidden"}
+          // variants={container}
+          // initial={isempView ? "hidden" : ""}
+          // animate={isempView ? "visible" : "hidden"}
         >
           <motion.div
-            variants={container1}
-            initial={isempView ? "hidden" : ""}
-            animate={isempView ? "visible" : "hidden"}
+            // variants={container1}
+            // initial={isempView ? "hidden" : ""}
+            // animate={isempView ? "visible" : "hidden"}
             className={styles.imageholder}>
             {/* <motion.img variants={item} src='./velu.jpeg'/> */}
           </motion.div>
           <motion.p
-            variants={item}
+            // variants={item}
           >A leading manufacturer of high-quality nuts, bolts, and fasteners, serving industries across construction, automotive, machinery, and more. With precision engineering and durable materials, we provide a wide range of standard and custom solutions designed to meet the toughest performance and safety standards. Our state-of-the-art manufacturing facility ensures reliable production, while our experienced team ensures timely delivery and customer satisfaction. Whether you need bulk orders or specialized designs, we are your trusted partner for fastening solutions that last.</motion.p>
         </motion.div>
       </section>
